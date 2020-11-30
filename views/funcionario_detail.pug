@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div.container
+    div.card.mx-auto.mt-5(style='width: 18rem;')
+      div.card-header
+        | #{funcionario.nome}
+      ul.list-group.list-group-flush
+        li.list-group-item #{funcionario.matricula}
+        li.list-group-item #{funcionario.setor}

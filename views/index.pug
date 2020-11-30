@@ -1,0 +1,43 @@
+extends layout
+block content
+	div.jumbotron.mt-5.pt-3.text-center
+		h1.display-4= title
+		p.lead
+		| Esse site visa agilizar o uso das transções do SAP 
+		hr.my-4
+		if error
+			p Erro ao carregar os dados T-T
+		else 
+			p Por enquanto temos os seguintes registros: 
+			ul
+				li #[strong Funcionários cadastrados:] !{data.funcionario_count}
+				li #[strong Ordens de serviço:] !{data.ordem_count}
+				li #[strong Baixas de ordens:] !{data.instanciaOrdem_count}
+		hr.my-4
+		p.lead
+			p O que gostaria de fazer?
+			div.row
+				div.col-sm-4
+					div.card.text-center(style='width: 18rem;')
+						div.card-body
+							h5.card-title Criar conta
+							p.card-text
+							| Criar uma conta para ter acesso às funcionalidades do sistema
+							br
+							a.btn.btn-primary.mt-2(href='/application/funcionario/create') Cadastrar
+				div.col-sm-4
+					div.card.text-center(style='width: 18rem;')
+						div.card-body
+							h5.card-title Criar ordem 
+							p.card-text
+							| Cadastrar uma nova ordem de serviço no sistema
+							br
+							a.btn.btn-primary.mt-2(href='/application/ordem/create') Criar
+				div.col-sm-4
+					div.card.text-center(style='width: 18rem;')
+						div.card-body
+							h5.card-title Dar baixa
+							p.card-text
+							| Dar baixa em uma ordem de serviço cadastrada no sistema
+							br
+							a.btn.btn-primary.mt-2(href='/application/instancia/create') Dar baixa

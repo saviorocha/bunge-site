@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1.pt-2= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='nome') Nome:
+      input#nome.form-control(type='text' placeholder='Seu nome' name='nome' required='true' value=(undefined===funcionario ? '' : funcionario.nome) )
+    div.form-group
+      label(for='matricula') Matricula:
+      input#matricula.form-control(type='text' placeholder='Sua matrícula'  name='matricula' value=(undefined===funcionario ? '' : funcionario.matricula) )
+    div.form-group
+      label(for='setor') Setor:
+      select#setor.form-control(type='select' placeholder='Select setor' name='setor' required='true')
+        option(value='Elétrica') Elétrica
+        option(value='Lubrificação') Lubrificação
+        option(value='Usinagem') Usinagem
+        option(value='Mecânica') Mecânica
+    div.form-group
+      label(for='senha') Senha:
+      input#senha.form-control(type='password' placeholder='Sua senha'  name='senha' value=(undefined===funcionario ? '' : funcionario.senha) )
+    button.btn.btn-primary(type='submit') Criar conta
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
+  if error_matricula
+    ul
+      li Já exite um funcionário cadastrado com esta matrícula
+        

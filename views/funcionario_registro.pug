@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	div.container.pt-5
+		div.row
+			div.col.align-self-start
+			div.col.align-self-center
+				form
+					div.form-group
+						label(for='nome') Nome completo
+						input#nome.form-control(type='text' required='true')
+					div.form-group
+						label(for='setor') Setor
+						select#setor.form-control
+							option Mecnica
+							option Eltrica
+							option Instrumentao
+							option Usinagem
+							option Envase
+					div.form-group
+						label(for='matricula') Matrdivcula
+						input#matricula.form-control(type='text' required='true')
+					div.form-group
+						label(for='senha') Senha
+						input#senha.form-control(type='password' required='true')
+					div.row
+						div.col.align-self-start
+						div.col.align-self-center
+							input.btn.btn-outline-primary(type='button' onclick="window.location.href='login.html'" style='margin: 0 auto;' value='Criar conta')
+						div.col.align-self-end
+				div.col.align-self-end

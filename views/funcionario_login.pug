@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	div.container.pt-5
+		div.row
+			div.col.align-self-start
+			div.col.align-self-center
+				form
+					div.form-group
+						label(for='matricula') Matrícula
+						input#matricula.form-control(type='text')
+					div.form-group
+						label(for='senha') Senha
+						input#senha.form-control(type='password')
+					div.row
+						div.col.align-self-start
+						div.col.align-self-center
+							a.btn.btn-outline-primary(href='#' style='margin: 0 auto;') Entrar
+						div.col.align-self-center
+							a.btn.btn-outline-primary(href='/application/funcionario/create' style='margin: 0 auto;') Registrar
+						div.col.align-self-end
+			div.col.align-self-end

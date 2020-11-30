@@ -8,10 +8,12 @@ let helmet = require('helmet');
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
-var applicationRouter = require('./routes/application');
+let applicationRouter = require('./routes/application');
 
 let mongoose = require('mongoose');
-let mongoDB = 'mongodb+srv://dbUser:INgtEcj2Q1@cluster0.gdzwl.gcp.mongodb.net/bunge?retryWrites=true&w=majority';
+// let mongoDB = 'mongodb+srv://dbUser:INgtEcj2Q1@cluster0.gdzwl.gcp.mongodb.net/bunge?retryWrites=true&w=majority';
+let dev_db_url = 'mongodb+srv://dbUser:INgtEcj2Q1@cluster0.gdzwl.gcp.mongodb.net/bunge?retryWrites=true&w=majority';
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
 let db = mongoose.connection;
 
 let app = express();
